@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "node -e \"require('fs').rmSync('.next',{recursive:true,force:true})\"",
     "dev": "next dev",
+    "prebuild": "node -e \"require('fs').rmSync('.next',{recursive:true,force:true})\"",
     "build": "next build",
+    "build:static": "node -e \"require('fs').rmSync('.next',{recursive:true,force:true})\" && set STATIC_EXPORT=1&& next build",
     "start": "next start"
   },
   "dependencies": {
-    "@next/swc-win32-x64-msvc": "^15.5.19",
     "animejs": "^4.4.1",
     "next": "^15.0.0",
     "react": "^19.2.6",
